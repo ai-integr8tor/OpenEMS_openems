@@ -118,8 +118,8 @@ public class AbstractOpenemsComponentTest {
 		assertNotNull("Channel Doc should not be null", doc);
 
 		// Verify the option values match what we defined in the schema
-		List<String> stringOptions = doc.getStringOptions();		
-		assertEquals("String options should be equal to initial values", optionValues, stringOptions);
+		List<String> stringOptions = doc.getStringOptions();
+		assertTrue("String options should be equal to initial values", optionValues.equals(stringOptions));
 	}
 
 }
