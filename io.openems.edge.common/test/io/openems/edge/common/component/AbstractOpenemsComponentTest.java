@@ -1,12 +1,14 @@
 package io.openems.edge.common.component;
 
 import static io.openems.edge.common.component.AbstractOpenemsComponent.propertyIdToMethodName;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.Assert.*;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -18,14 +20,15 @@ import com.google.gson.JsonArray;
 import io.openems.common.channel.PropertyChannel;
 import io.openems.common.types.EdgeConfig;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 public class AbstractOpenemsComponentTest {
 
 	/**
 	 * Test configuration interface with select property
 	 */
-	@org.osgi.service.metatype.annotations.ObjectClassDefinition(name = "Test Component with Select Property")
-	public interface TestConfig {
+	@ObjectClassDefinition(name = "Test Component with Select Property", description = "A test component configuration with a select property")
+	@interface TestConfig {
 		@AttributeDefinition(name = "Priority", description = "Priority level")
 		@PropertyChannel
 		String priority();
