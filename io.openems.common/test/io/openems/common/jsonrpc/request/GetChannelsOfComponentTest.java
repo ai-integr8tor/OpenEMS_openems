@@ -45,7 +45,7 @@ public class GetChannelsOfComponentTest {
 				Unit.NONE, //
 				ChannelCategory.ENUM, //
 				null, // level
-				null, //stringOptions
+				null, // stringOptions
 				options //
 		);
 		List<String> stringOptions = Arrays.asList("NONE", "DEBUG_LOG", "TRACE");
@@ -63,7 +63,8 @@ public class GetChannelsOfComponentTest {
 		);
 
 		// Create a response with the channel record
-		var originalResponse = new GetChannelsOfComponent.Response(Arrays.asList(plainChannelRecord, attributedefinitionRecord));
+		var originalResponse = new GetChannelsOfComponent.Response(
+				Arrays.asList(plainChannelRecord, attributedefinitionRecord));
 
 		// Serialize to JSON string
 		var json = GetChannelsOfComponent.Response.serializer().serialize(originalResponse);
