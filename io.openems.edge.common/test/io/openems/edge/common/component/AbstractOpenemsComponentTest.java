@@ -8,11 +8,8 @@ import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
 
-import org.osgi.service.metatype.ObjectClassDefinition;
-
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.Dictionary;
 import java.util.List;
 
 import com.google.gson.JsonObject;
@@ -59,29 +56,6 @@ public class AbstractOpenemsComponentTest {
 
 	@Test
 	public void testAddChannelsForProperties() throws Exception {
-		// This test verifies that the addChannelsForProperties method exists and is accessible
-		// It's a simple check to ensure the method signature and basic functionality are present
-
-		// Verify that the private method exists
-		Method method = AbstractOpenemsComponent.class.getDeclaredMethod("addChannelsForProperties",
-				ObjectClassDefinition.class, Dictionary.class);
-		assertNotNull("addChannelsForProperties method should exist", method);
-
-		// Verify method is private
-		method.setAccessible(true);
-
-		// The method processes properties and skips password properties
-		// The actual invocation would require complex mocking of OSGi components
-		// For now, we verify that the method:
-		// 1. Exists (above check)
-		// 2. Is properly defined with correct parameters (above check)
-		// 3. Can be invoked via reflection (accessibility check)
-		assertEquals("Method should be declared in AbstractOpenemsComponent",
-				AbstractOpenemsComponent.class, method.getDeclaringClass());
-	}
-
-	@Test
-	public void testAddChannelsForPropertiesWithSelectSchema() throws Exception {
 		// This test verifies that getOrCreateChannel correctly parses select schema
 		// (templateOptions.options) and adds channels with string options
 
