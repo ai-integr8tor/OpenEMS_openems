@@ -25,7 +25,7 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 public class AbstractOpenemsComponentTest {
 
 	/**
-	 * Test configuration interface with select property
+	 * Test configuration interface with select property.
 	 */
 	@ObjectClassDefinition(name = "Test Component with Select Property", description = "A test component configuration with a select property")
 	@interface TestConfig {
